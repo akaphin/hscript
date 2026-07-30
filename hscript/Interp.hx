@@ -1,7 +1,7 @@
 package hscript;
 
-import haxe.PosInfos;
 import haxe.Constraints.IMap;
+import haxe.PosInfos;
 import hscript.*;
 import hscript.Expr;
 
@@ -327,8 +327,6 @@ class Interp {
         }
     }
 
-    public function executeModule()
-
     public function execute(expr:Expr):Dynamic {
         depth = 0;
         locals = new Map();
@@ -368,7 +366,7 @@ class Interp {
         }
     }
 
-    inline function error(eDef:ErrorDef, rethrow = false):Dynamic {
+    public inline function error(eDef:ErrorDef, rethrow = false):Dynamic {
         var e = new Error(eDef, 0, 0, 'hscript', 0);
         if (curExpr != null)
             e = new Error(eDef, curExpr.pmin, curExpr.pmax, curExpr.origin, curExpr.line);
