@@ -1,3 +1,5 @@
+package;
+
 import haxe.ds.EnumValueMap;
 import haxe.ds.Option;
 import hscript.Macro;
